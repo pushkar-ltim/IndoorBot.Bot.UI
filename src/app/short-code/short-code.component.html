@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="short-code-form" *ngIf="!shortCodeEntered">
+      <img src="assets/logo.png" alt="Venue Logo" class="logo">
+      <h2>Welcome!</h2>
+      <p>Please enter your short code:</p>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Enter short code" [(ngModel)]="shortCode" required>
+        <mat-error *ngIf="shortCodeFormControl.hasError('required')">
+          Short code is required
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="submitShortCode()" [disabled]="!shortCode">
+        Submit
+      </button>
+      <div class="error" *ngIf="shortCodeError">
+        {{ shortCodeError }}
+      </div>
+    </div>
+  
+    <div class="options" *ngIf="shortCodeEntered && !showAskMe">
+      <button mat-raised-button color="primary" (click)="onAskMeClick()">Ask Me</button>
+      <button mat-raised-button color="primary" (click)="onViewScheduleClick()">View Schedule</button>
+    </div>
+  
+    <app-ask-me *ngIf="showAskMe" [jwtToken]="jwtToken"></app-ask-me>
+  </div>

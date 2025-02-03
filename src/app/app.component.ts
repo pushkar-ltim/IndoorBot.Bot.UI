@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ShortCodeComponent } from './short-code/short-code.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, ShortCodeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
