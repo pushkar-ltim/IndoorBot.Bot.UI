@@ -1,4 +1,4 @@
-import { Component, Input, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http';
@@ -33,6 +33,7 @@ interface BotResponse {
   ]
 })
 export class AskMeComponent {
+  @Output() test:any;
   @Input() jwtToken: string = "";
   userQuery = '';
   messages: ChatMessage[] = [];
