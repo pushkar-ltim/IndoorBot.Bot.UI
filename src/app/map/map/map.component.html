@@ -1,0 +1,8 @@
+<div>
+    <label for="start">Start:</label>
+    <input type="text" id="start" [(ngModel)]="startId">
+    <label for="end">End:</label>
+    <input type="text" id="end" [(ngModel)]="endId">
+    <button (click)="findPath()">Find Path</button>
+</div>
+<div id="map" style="height: 500px; width: 100%;"></div>
